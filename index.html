@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My personal portfolio showcasing projects and skills.">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <div class="profile-picture-placeholder" aria-label="Profile picture placeholder"></div>
+            <h1>John Doe</h1>
+            <p class="tagline">Passionate Web Developer | Creating engaging experiences</p>
+            <nav>
+                <ul>
+                    <li><a href="#about" aria-label="About section">About</a></li>
+                    <li><a href="#skills" aria-label="Skills section">Skills</a></li>
+                    <li><a href="#projects" aria-label="Projects section">Projects</a></li>
+                    <li><a href="#contact" aria-label="Contact section">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="container">
+            <h2 aria-label="About Me">About Me</h2>
+            <p>Hello! I'm John Doe, a web developer with a passion for creating beautiful and functional web applications. I have experience in front-end development, focusing on responsive design and user experience. My goal is to build impactful digital solutions that solve real-world problems.</p>
+            <p>I am always eager to learn new technologies and improve my craft. When I'm not coding, you can find me exploring new hiking trails or reading a good book.</p>
+        </section>
+
+        <section id="skills" class="container">
+            <h2 aria-label="My Skills">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">HTML5</div>
+                <div class="skill-item">CSS3</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">React</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">Git</div>
+                <div class="skill-item">Responsive Design</div>
+                <div class="skill-item">UI/UX Principles</div>
+            </div>
+        </section>
+
+        <section id="projects" class="container">
+            <h2 aria-label="My Projects">Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image-placeholder" aria-label="Project 1 image placeholder"></div>
+                    <h3>Project One</h3>
+                    <p>A responsive e-commerce platform built with React and Node.js. Features include user authentication, product listings, and a shopping cart.</p>
+                    <a href="#" class="button" aria-label="View Project One">View Project</a>
+                </article>
+                <article class="project-card">
+                    <div class="project-image-placeholder" aria-label="Project 2 image placeholder"></div>
+                    <h3>Project Two</h3>
+                    <p>A personal blog application developed using vanilla JavaScript and CSS. It includes dynamic post loading and a dark mode toggle.</p>
+                    <a href="#" class="button" aria-label="View Project Two">View Project</a>
+                </article>
+                <article class="project-card">
+                    <div class="project-image-placeholder" aria-label="Project 3 image placeholder"></div>
+                    <h3>Project Three</h3>
+                    <p>A task management tool with drag-and-drop functionality. Implemented with HTML, CSS Grid, and pure JavaScript for a smooth user experience.</p>
+                    <a href="#" class="button" aria-label="View Project Three">View Project</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2 aria-label="Contact Me">Contact Me</h2>
+            <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required aria-label="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required aria-label="Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required aria-label="Your Message"></textarea>
+                </div>
+                <button type="submit" class="button" aria-label="Send Message">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 John Doe. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn profile">LinkedIn</a>
+                <a href="#" aria-label="GitHub profile">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js" defer></script>
+</body>
+</html>
