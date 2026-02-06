@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (isValid) {
         // In a real application, you would send this data to a server
-        // For now, we'll just log it and show a success message.
         console.log('Form Submitted!', {
           name: nameInput.value.trim(),
           email: emailInput.value.trim(),
@@ -66,9 +65,52 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function isValidEmail(email) {
-    // Basic email regex for demonstration
-    const regex =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const regex = /^(([^<>()[\]\\.,;:\s@"]+(
+.[^<>()[\]\\.,;:\s@"]+)*)|(\".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex.test(String(email).toLowerCase());
   }
 });
+
+// Dark mode toggle functionality
+const toggleDarkMode = () => {
+  document.body.classList.toggle('dark-mode');
+};
+
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+if (darkModeToggle) {
+  darkModeToggle.addEventListener('click', toggleDarkMode);
+}
+
+// Check for user's last dark mode preference
+if (localStorage.getItem('darkMode') === 'enabled') {
+  document.body.classList.add('dark-mode');
+}
+
+// Store the user's dark mode preference
+const setDarkModePreference = (isEnabled) => {
+  localStorage.setItem('darkMode', isEnabled ? 'enabled' : 'disabled');
+};
+
+// Listen for changes to the dark mode toggle
+const darkToggleBtn = document.getElementById('dark-mode-toggle');
+if (darkToggleBtn) {
+  darkToggleBtn.addEventListener('change', (e) => {
+    setDarkModePreference(e.target.checked);
+    if (e.target.checked) {
+      toggleDarkMode();
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  });
+}
+
+// Default preference setting function
+const applyDefaultSetting = () => {
+  const isEnabled = localStorage.getItem('darkMode') === 'enabled';
+  darkToggleBtn.checked = isEnabled;
+  if (isEnabled) {
+    toggleDarkMode();
+  }
+};
+
+document.addEventListener('DOMContentLoaded', applyDefaultSetting);
