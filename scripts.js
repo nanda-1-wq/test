@@ -18,15 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Dark mode toggle
-  const toggleButton = document.createElement('button');
-  toggleButton.innerText = 'Toggle Dark Mode';
-  document.body.appendChild(toggleButton);
-
-  toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
-
   // Basic form validation for contact form
   const contactForm = document.querySelector('.contact-form');
 
@@ -77,4 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function isValidEmail(email) {
     // Basic email regex for demonstration
     const regex =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(\
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(String(email).toLowerCase());
+  }
+});
